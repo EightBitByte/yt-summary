@@ -43,6 +43,6 @@ def getTranscriptText(link: str) -> str:
     text = ""
 
     for dictionary in transcript_json:
-        text += dictionary['text'] + " "
+        text += dictionary['text']
 
     return normalize('NFKD', text)

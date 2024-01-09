@@ -7,7 +7,7 @@ from summary import summarizer
 
 def get_video_summary(vid: str) -> str:
     captions = transcripts.getTranscriptText(vid)
-    summary = summarizer.summarize(captions)
+    summary = summarizer.parse_txt(captions)
 
     return summary
 
