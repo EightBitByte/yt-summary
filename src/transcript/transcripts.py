@@ -5,7 +5,7 @@
 from unicodedata import normalize
 from youtube_transcript_api import YouTubeTranscriptApi 
 
-def getTranscriptText(link: str) -> str:
+def get_transcript_text(link: str) -> str:
     """
     Returns a concatenated string of the transcripted text
     from the video provided.
@@ -43,6 +43,6 @@ def getTranscriptText(link: str) -> str:
     text = ""
 
     for dictionary in transcript_json:
-        text += dictionary['text']
+        text += dictionary['text'] + " "
 
     return normalize('NFKD', text)
