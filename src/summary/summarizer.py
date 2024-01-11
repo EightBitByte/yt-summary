@@ -15,6 +15,16 @@ LANGUAGE = "english"
 # TODO: Punctuation
 
 def parse_txt(text: str, sentence_count: int = 2) -> str:
+    """
+    Summarizes text into (sentence_count) sentences.
+
+    Parameters -----
+    text (str): Transcript text.
+    sentence_count (int): The number of sentences to condense into.
+
+    Return -----
+    A str containing a summary of the transcripts.
+    """
     dwn_dir = Path(__file__).parent / "data"
     nltk.download('punkt', dwn_dir) 
 

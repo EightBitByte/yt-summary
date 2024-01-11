@@ -11,7 +11,7 @@ def getTranscriptText(link: str) -> str:
     from the video provided.
 
     Preconditions -----
-    TODO: Change the below Precondition to not be
+    TODO: Change the below precondition to check validity.
     Link is a valid YouTube URL or video ID 
     Link is non-empty
 
