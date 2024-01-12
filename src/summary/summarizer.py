@@ -6,7 +6,6 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.nlp.stemmers import Stemmer
 from sumy.summarizers.lsa import LsaSummarizer as Summarizer
 from sumy.utils import get_stop_words
-from punctuator import Punctuator
 from pathlib import Path
 import nltk
 
@@ -25,6 +24,8 @@ def parse_txt(text: str, sentence_count: int = 2) -> str:
     Return -----
     A str containing a summary of the transcripts.
     """
+
+    # Downloading the text parsing model
     dwn_dir = Path(__file__).parent / "data"
     nltk.download('punkt', dwn_dir) 
 
@@ -36,6 +37,7 @@ def parse_txt(text: str, sentence_count: int = 2) -> str:
 
     ret_txt = ""
 
+    # Combining the sentences into one string
     for sentence in summarizer(parser.document, sentence_count):
         ret_txt += str(sentence) + " "
 

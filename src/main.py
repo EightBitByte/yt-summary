@@ -15,6 +15,7 @@ def get_video_summary(vid: str) -> str:
     Return -----
     A str containing a summary of the transcripts.
     """
+
     captions = transcripts.getTranscriptText(vid)
     summary = summarizer.parse_txt(captions)
 
